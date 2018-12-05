@@ -35,33 +35,36 @@ public class ServerInfo implements MessageCreateListener {
         	event.getChannel().sendMessage(embed);
         	*/
         	
-        	SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.SSS");
+        	SimpleDateFormat formatter = new SimpleDateFormat("dd:HH:mm:ss.SSS");
             //formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
         	String uptime = formatter.format(ManagementFactory.getRuntimeMXBean().getUptime());
         	String[] uptime_split = uptime.split(":");
         	
-        	String uptime_hours = Integer.toString(new Integer(Integer.parseInt(uptime_split[0])) - 1);
-        	String uptime_minutes = uptime_split[1];
-        	String uptime_seconds_2 = uptime_split[2];
+        	String uptime_days = Integer.toString(new Integer(Integer.parseInt(uptime_split[0])) - 1);
+        	String uptime_hours = Integer.toString(new Integer(Integer.parseInt(uptime_split[1])) - 1);
+        	String uptime_minutes = uptime_split[2];
+        	String uptime_seconds_2 = uptime_split[3];
         	String uptime_seconds = uptime_seconds_2.substring(0, uptime_seconds_2.indexOf("."));
         	
         	String uptime_output = "";
         	
-        	if(Integer.parseInt(uptime_hours) != 0 ) {
-        		uptime_output += uptime_hours + " hrs";
+        	if(Integer.parseInt(uptime_days) != 0 ) {
+        		
+        		uptime_output += uptime_days + "d ";
         	}
+        
+        	if(Integer.parseInt(uptime_hours) != 0 ) {
+        		
+        		uptime_output += uptime_hours + "h ";
+        	}
+        	
         	
         	if(Integer.parseInt(uptime_minutes) != 0 ) {
         		
-        		if(Integer.parseInt(uptime_minutes) != 1) {
-            		uptime_output += " " + uptime_minutes + " mins ";
-        		} 
-        		else {
-            		uptime_output += " " + uptime_minutes + " min ";
-        		}
+        		uptime_output += uptime_minutes + "m ";
         	}
         	
-        	uptime_output += uptime_seconds + " secs";
+        	uptime_output += uptime_seconds + "s";
         	
         	// Get Bot Owner
         	String bot_owner = "<@";
