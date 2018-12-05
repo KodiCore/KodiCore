@@ -53,9 +53,9 @@ public class ServerInfo implements MessageCreateListener {
         		uptime_output += uptime_days + "d ";
         	}
         
-        	if(Integer.parseInt(uptime_hours) != 0 ) {
+        	if(Integer.parseInt(uptime_hours) + Integer.parseInt(uptime_days) != 0 ) {
         		
-        		uptime_output += uptime_hours + "h ";
+        		uptime_output += (uptime_days + uptime_hours) + "h ";
         	}
         	
         	
