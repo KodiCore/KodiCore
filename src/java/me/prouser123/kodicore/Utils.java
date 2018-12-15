@@ -3,6 +3,7 @@ package me.prouser123.kodicore;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -144,5 +145,13 @@ public class Utils {
 					
 			// Add the item to the inventory
 			inv.setItem(position, stack);
+		}
+		
+		/**
+		 * Run a command in the console.
+		 * @param command command
+		 */
+		public static void runConsoleCommand(String command) {
+			Bukkit.dispatchCommand(Main.inst().getServer().getConsoleSender(), command);
 		}
 }

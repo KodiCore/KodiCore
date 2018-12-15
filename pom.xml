@@ -2,7 +2,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.prouser123</groupId>
   <artifactId>KodiCore</artifactId>
-  <version>0.2.0-STABLE</version>
+  <version>0.3-STABLE</version>
+   <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <build>
     <sourceDirectory>src/java</sourceDirectory>
     <resources>
@@ -20,6 +24,38 @@
           <target/>
         </configuration>
       </plugin>
+      <!-- Package JavaCord & Dependencies in KodiCore -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <phase>install</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+            <minimizeJar>false</minimizeJar>
+              <artifactSet>
+                <includes>
+                  <include>org.javacord:javacord</include>
+                  <include>org.javacord:javacord-api</include>
+                  <include>org.javacord:javacord-core</include>
+                  <include>com.squareup.okhttp3:okhttp</include>
+                  <include>com.squareup.okio:okio</include>
+                  <include>com.squareup.okhttp3:logging-interceptor</include>
+                  <include>com.fasterxml.jackson.core:jackson-databind</include>
+                  <include>com.fasterxml.jackson.core:jackson-annotations</include>
+                  <include>com.fasterxml.jackson.core:jackson-core</include>
+                  <include>com.neovisionaries:nv-websocket-client</include>
+                  <include>org.apache.logging.log4j:log4j-api</include>
+                </includes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
     <extensions>
       <extension>
@@ -32,6 +68,11 @@
   <name>KodiCore</name>
   <url>https://github.com/Prouser123/KodiCore/</url>
   <repositories>
+    <!-- Sonatype (For JavaCord) -->
+    <repository>
+      <id>Sonatype Snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
     <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -56,14 +97,13 @@
       <version>1.12-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
-    <!-- CraftBukkit (Local File) -->
-    <!--<dependency>
-    <groupId>org.bukkit</groupId>
-    <artifactId>craftbukkit</artifactId>
-    <version>1.12-R0.1-SNAPSHOT</version>
-    <scope>system</scope>
-    <systemPath>${project.basedir}/lib/craftbukkit-1.12.jar</systemPath>
-</dependency>-->
+    <!-- JavaCord (Discord Library) -->
+    <dependency>
+      <groupId>org.javacord</groupId>
+      <artifactId>javacord</artifactId>
+      <version>3.0.1</version>
+      <type>pom</type>
+    </dependency>
   </dependencies>
   <distributionManagement>
     <repository>
