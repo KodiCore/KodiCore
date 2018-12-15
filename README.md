@@ -36,3 +36,68 @@ Then add this to the `dependencies` section of your `pom.xml`:
   </dependency>
 </dependencies>
 ```
+
+## Key Methods
+
+More (and detailed) information for all methods can be found in the documentation, linked below.
+
+[FULL Documentation Link](https://kodicore.github.io/KodiCore)
+
+### Console
+
+KodiCore Console Logging - log to the console with info, warning or severe types.
+
+**Class Location:** [me.prouser123.kodicore.send.Console](https://kodicore.github.io/KodiCore/me/prouser123/kodicore/send/Console.html)
+
+**Required for plugin operation?** Yes
+
+**Requires new instance?** Yes - create with `new Console(this);` from your plugin's Main class.
+
+### Chat
+
+**Class Location:** [me.prouser123.kodicore.send.Chat](https://kodicore.github.io/KodiCore/me/prouser123/kodicore/send/Chat.html)
+
+**Requires new instance?** No, just import the class and start coding!
+
+Features:
+- Chat to permission
+- Chat to player
+- Chat to players
+- Chat to server / Broadcast to server
+- Chat to world
+
+### Utils
+
+**Class Location:** [me.prouser123.kodicore.Utils](https://kodicore.github.io/KodiCore/me/prouser123/kodicore/Utils.html)
+
+**Requires new instance?** No, just import the class and start coding!
+
+Features:
+- Add item to inventory (with modifiers)
+- Run a command in the console
+- Get World (by name)
+- Broadcasting
+- getConfig getInt
+- getConfig getString
+- Get online players (amount)
+- Get online players (player names)
+ 
+### Discord
+
+**Class Location:** 
+[me.prouser123.kodicore.Discord](https://kodicore-4vjczy4tx.now.sh/docs/me/prouser123/kodicore/discord/Discord.html)
+
+**Requires new instance?** Yes. Create with `new Discord("discord-bot-token");`
+
+After you have created a instance you can add various things to your bot. See the docs for details.
+
+
+Example feature:
+
+- Discord `!serverinfo` command
+
+  Use `Discord.api.addMessageCreateListener(new ServerInfo());` to enable.
+
+  Example output:
+
+  <img src="https://github.com/KodiCore/DiscordBot/raw/master-standalone/serverinfo_output.PNG" alt="Output" width=550>
