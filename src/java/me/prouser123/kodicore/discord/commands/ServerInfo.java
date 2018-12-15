@@ -15,7 +15,7 @@ public class ServerInfo implements MessageCreateListener {
 	
 	/**
 	 * Listener Command to show server information
-	 * Usage: <DiscordApi> api.addMessageCreateListener(new ServerInfo());
+	 * Usage: (DiscordApi - e.g. Discord.api) api.addMessageCreateListener(new ServerInfo());
 	 */
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
