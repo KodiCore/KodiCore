@@ -15,25 +15,12 @@ public class ServerInfo implements MessageCreateListener {
 	
 	/**
 	 * Listener Command to show server information
-	 * Usage: api.addMessageCreateListener(new ServerInfo());
+	 * Usage: <DiscordApi> api.addMessageCreateListener(new ServerInfo());
 	 */
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
         // Check if the message content equals "!copyAvatar"
         if (event.getMessage().getContent().equalsIgnoreCase("!serverinfo")) {
-        	/*
-        	// Create the embed
-        	EmbedBuilder embed = new EmbedBuilder()
-        	    //.setTitle("Title")
-        	    //.setDescription("Description")
-        	    .setAuthor("KodiCore", "https://github.com/", "https://cdn.discordapp.com/embed/avatars/0.png")
-        	    .addField("A field", "Some text inside the field")
-        	    .addInlineField("An inline field", "More text")
-        	    .addInlineField("Another inline field", "Even more text")
-        	    .setColor(Color.CYAN);
-        	// Send the embed
-        	event.getChannel().sendMessage(embed);
-        	*/
         	
         	SimpleDateFormat formatter = new SimpleDateFormat("dd:HH:mm:ss.SSS");
             //formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -94,7 +81,6 @@ public class ServerInfo implements MessageCreateListener {
             	.setFooter("KodiCore " + Main.version.toString()/*.split("-")[0]*/, "https://cdn.discordapp.com/avatars/215119410103451648/575d90fdda8663b633e36f8b8c06c719.png");
             	// Send the embed
             event.getChannel().sendMessage(embed2);
-            //Console.info(embed2.toString());
             return;
         }
         return;
