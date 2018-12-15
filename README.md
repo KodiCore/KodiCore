@@ -61,11 +61,11 @@ KodiCore Console Logging - log to the console with info, warning or severe types
 **Requires new instance?** No, just import the class and start coding!
 
 Features:
--  Chat to permission
--  Chat to player
--  Chat to players
--  Chat to server / Broadcast to server
--  Chat to world
+- Chat to permission
+- Chat to player
+- Chat to players
+- Chat to server / Broadcast to server
+- Chat to world
 
 ### Utils
 
@@ -74,14 +74,14 @@ Features:
 **Requires new instance?** No, just import the class and start coding!
 
 Features:
--  Add item to inventory (with modifiers)
--  Run a command in the console
--  Get World (by name)
--  Broadcasting
--  getConfig getInt
--  getConfig getString
--  Get online players (amount)
--  Get online players (player names)
+- Add item to inventory (with modifiers)
+- Run a command in the console
+- Get World (by name)
+- Broadcasting
+- getConfig getInt
+- getConfig getString
+- Get online players (amount)
+- Get online players (player names)
  
 ### Discord
 
@@ -95,10 +95,10 @@ After you have created a instance you can add various things to your bot. See th
 
 Example feature:
 
--  Discord `!serverinfo` command
+- Discord `!serverinfo` command
 
-   Use `Discord.api.addMessageCreateListener(new ServerInfo());` to enable.
+  Use `Discord.api.addMessageCreateListener(new ServerInfo());` to enable.
 
-   Example output:
+  Example output:
 
-   <img src="https://github.com/KodiCore/DiscordBot/raw/master-standalone/serverinfo_output.PNG" alt="Output" width=550>
+  <img src="https://github.com/KodiCore/DiscordBot/raw/master-standalone/serverinfo_output.PNG" alt="Output" width=550>
