@@ -4,6 +4,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.prouser123.kodicore.send.Console;
 
+import me.prouser123.bstatsplus.bukkit.MetricsLite;
+
 public class Main extends JavaPlugin {
 	
 	/**
@@ -40,5 +42,7 @@ public class Main extends JavaPlugin {
 		//new Discord("null");
 		// Send a message
 		Console.info("Welcome to KodiCore! Initializing...");
+		// Start bStats
+		MetricsLite metrics = new MetricsLite(this, true);
 	}
 }

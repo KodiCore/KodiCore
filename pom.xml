@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.prouser123</groupId>
   <artifactId>KodiCore</artifactId>
-  <version>0.3-STABLE</version>
+  <version>0.3.1-STABLE</version>
    <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -50,6 +50,7 @@
                   <include>com.fasterxml.jackson.core:jackson-core</include>
                   <include>com.neovisionaries:nv-websocket-client</include>
                   <include>org.apache.logging.log4j:log4j-api</include>
+                  <include>me.prouser123:bstatsplus</include>
                 </includes>
               </artifactSet>
             </configuration>
@@ -72,6 +73,11 @@
     <repository>
       <id>Sonatype Snapshots</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
+    <!-- bStats+ -->
+    <repository>
+      <id>Prouser123-mcdev</id>
+      <url>https://packagecloud.io/Prouser123/mcdev/maven2/</url>
     </repository>
     <repository>
       <id>spigot-repo</id>
@@ -103,6 +109,12 @@
       <artifactId>javacord</artifactId>
       <version>3.0.1</version>
       <type>pom</type>
+    </dependency>
+    <!-- bStats -->
+    <dependency>
+      <groupId>me.prouser123</groupId>
+      <artifactId>bstatsplus</artifactId>
+      <version>1.4</version>
     </dependency>
   </dependencies>
   <distributionManagement>
